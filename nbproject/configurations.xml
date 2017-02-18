@@ -66,6 +66,11 @@
         <ccTool>
           <developmentMode>0</developmentMode>
           <standard>8</standard>
+          <incDir>
+            <pElem>../..</pElem>
+            <pElem>../../..</pElem>
+            <pElem>$$HOME/include</pElem>
+          </incDir>
           <commandLine>-Ofast</commandLine>
         </ccTool>
         <fortranCompilerTool>
@@ -75,6 +80,9 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>$$HOME/lib</pElem>
+          </linkerAddLib>
           <commandLine>-lcln -lginac</commandLine>
         </linkerTool>
       </compileType>
