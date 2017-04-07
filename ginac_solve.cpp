@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
         
         vars = ex_to<matrix>(symbolic_matrix(to_invert.cols(), 1, "F"));
         //std::cout << vars << std::endl;
-        sols = to_invert.solve(vars, rhs);
+        sols = to_invert.solve(vars, rhs, solve_algo::gauss);
         std::cout << sols << std::endl;
     } else std::cout << "Could not open file: " << iName << std::endl;
 
