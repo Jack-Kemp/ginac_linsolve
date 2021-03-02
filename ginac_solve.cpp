@@ -13,10 +13,13 @@ int main(int argc, char** argv) {
     lst to_invert_lst, rhs_lst;
     std::string to_invert_str, rhs_str;
     matrix to_invert, rhs, vars, sols;
-    realsymbol V("V"), f("f"), X("X"), Y("Y"), J2("J2"), J("J"), Vy("Vy");
+    realsymbol V("V"), f("f"), X("X"), Y("Y"), J2("J2"), J("J"), Vy("Vy"),
+      h1("h1"), h2("h2"),J1("J1"),K("K");
     symtab table;
     table["V"] = V; table["J2"] = J2; table["f"] = f; table["X"] = X; 
-    table["Y"] = Y; table["J"] = J; table["Vy"] = Vy;
+    table["Y"] = Y; table["J"] = J; table["Vy"] = Vy; table["J1"] = J1;
+    table["h1"] = h1; table["h2"] = h2; table["K"] = K;
+    
     parser reader (table);
 
     std::string iName = std::string(argv[1]);
@@ -36,7 +39,7 @@ int main(int argc, char** argv) {
         
         vars = ex_to<matrix>(symbolic_matrix(to_invert.cols(), 1, "F"));
         //std::cout << vars << std::endl;
-        sols = to_invert.solve(vars, rhs, solve_algo::gauss);
+        sols = to_invert.solve(vars, rhs, solve_algo::markowitz);
         std::cout << sols << std::endl;
     } else std::cout << "Could not open file: " << iName << std::endl;
 

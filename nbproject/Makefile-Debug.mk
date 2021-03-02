@@ -58,10 +58,6 @@ LDLIBSOPTIONS=
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ginac_commutator
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ginac_commutator: -lginac
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ginac_commutator: -lcln
-
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ginac_commutator: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ginac_commutator ${OBJECTFILES} ${LDLIBSOPTIONS} -lcln -lginac
